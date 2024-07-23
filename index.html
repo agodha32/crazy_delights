@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crazy Delight</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/background.jpg');
+            background-size: cover;
+            color: #333;
+        }
+        header {
+            background-color: rgba(139, 0, 0, 0.8);
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 1em;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        section {
+            padding: 2em;
+            text-align: center;
+            background-color: rgba(255, 239, 213, 0.8);
+            margin: 2em 0;
+        }
+        .about-chef img {
+            max-width: 200px;
+            border-radius: 50%;
+            margin-bottom: 1em;
+        }
+        .menu .product, .size-guide ul {
+            margin: 2em auto;
+        }
+        footer {
+            background-color: rgba(139, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        form label {
+            margin: 0.5em 0 0.2em;
+        }
+        form input, form textarea {
+            padding: 0.5em;
+            margin-bottom: 1em;
+            width: 80%;
+            max-width: 500px;
+        }
+        form button {
+            padding: 0.5em;
+            background-color: #8b0000;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100px;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('home');
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Crazy Delight</h1>
+        <nav>
+            <ul>
+                <li><a onclick="showSection('home')">Home</a></li>
+                <li><a onclick="showSection('menu')">Menu</a></li>
+                <li><a onclick="showSection('sizeGuide')">Size Guide</a></li>
+                <li><a onclick="showSection('contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Welcome to Crazy Delight</h2>
+            <p>Experience the art of baking with our renowned Chef, Ritu Godha.</p>
+            <section class="about-chef">
+                <h2>Meet the Chef</h2>
+                <img src="images/chef.jpg" alt="Chef Ritu Godha">
+                <p>Chef Ritu Godha has over 20 years of experience in creating delightful baked goods. Her passion for baking started at a young age, and she has since perfected her craft to bring you the best cakes, cookies, and breads.</p>
+            </section>
+        </section>
+        <section id="menu">
+            <h2>Our Menu</h2>
+            <div class="product">
+                <img src="images/cake.jpg" alt="Delicious Cake">
+                <h3>Cakes</h3>
+                <p>Try our delicious and freshly baked cakes.</p>
+            </div>
+            <div class="product">
+                <img src="images/cookies.jpg" alt="Tasty Cookies">
+                <h3>Cookies</h3>
+                <p>Enjoy our wide variety of cookies.</p>
+            </div>
+            <div class="product">
+                <img src="images/bread.jpg" alt="Fresh Bread">
+                <h3>Bread</h3>
+                <p>Freshly baked bread daily.</p>
+            </div>
+        </section>
+        <section id="sizeGuide">
+            <h2>Size Guide</h2>
+            <p>We offer a variety of sizes for our baked goods to fit your needs:</p>
+            <ul>
+                <li><strong>Small Cakes:</strong> Serves 4-6 people</li>
+                <li><strong>Medium Cakes:</strong> Serves 8-10 people</li>
+                <li><strong>Large Cakes:</strong> Serves 12-15 people</li>
+                <li><strong>Cookies:</strong> Available in batches of 12, 24, or 36</li>
+                <li><strong>Breads:</strong> Full and half loaves available</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form action="send_email.php" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Crazy Delight</p>
+    </footer>
+</body>
+</html>
