@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crazy Delight - Elegant Bakery</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background-color: #fffaf7;
+            scroll-behavior: smooth;
+        }
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            color: #8b0000;
+            padding: 1em 2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5em;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #8b0000;
+            font-weight: bold;
+            font-size: 1em;
+        }
+        section {
+            padding: 4em 2em;
+        }
+        .hero {
+            background: url('images/hero-bakery.jpg') center/cover no-repeat;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            text-align: center;
+        }
+        .about-chef {
+            background-color: rgba(255,255,255,0.95);
+            text-align: center;
+        }
+        .about-chef img {
+            max-width: 200px;
+            border-radius: 50%;
+            margin-bottom: 1em;
+            border: 4px solid #e0c6b2;
+        }
+        .menu-section, .size-guide-section {
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2em;
+        }
+        .menu-grid div, .size-guide-table table {
+            background: white;
+            padding: 2em;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .size-guide-table table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2em;
+        }
+        .size-guide-table th, .size-guide-table td {
+            padding: 1em;
+            border-bottom: 1px solid #ddd;
+        }
+        .size-guide-table thead {
+            background-color: #f8e8df;
+            color: #8b0000;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+        }
+        form label, form input, form textarea, form button {
+            display: block;
+            width: 100%;
+            margin-bottom: 1em;
+        }
+        form input, form textarea {
+            padding: 0.75em;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        form button {
+            background-color: #8b0000;
+            color: white;
+            border: none;
+            padding: 0.75em;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #a40000;
+        }
+        footer {
+            background-color: #8b0000;
+            color: white;
+            text-align: center;
+            padding: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Crazy Delight</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#size-guide">Size Guide</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="hero">
+            <h2 style="font-size: 3em; font-weight: 300;">Welcome to Crazy Delight</h2>
+            <p style="font-size: 1.5em; max-width: 700px;">Where elegance meets sweetness — hand-crafted cakes and confections by the talented Chef Ritu Godha.</p>
+        </div>
+        <div class="about-chef">
+            <img src="images/chef.png" alt="Chef Ritu Godha">
+            <h2>Meet Chef Ritu Godha</h2>
+            <p>
+                With a lifelong passion for the art of baking, Chef Ritu brings years of experience and a heart full of love into every creation.
+                From bespoke wedding cakes to delicate pastries, each treat is a reflection of timeless craftsmanship and flavor.
+            </p>
+        </div>
+    </section>
+
+    <section id="menu" style="background-color: #fefaf6;">
+        <div class="menu-section">
+            <h2 style="color: #8b0000;">Our Menu</h2>
+            <p>Crafted with love and the finest ingredients, each item is a sweet celebration of flavor.</p>
+            <div class="menu-grid">
+                <div>
+                    <h3 style="color: #8b0000;">Classic Cakes</h3>
+                    <ul>
+                        <li>Vanilla Bean</li>
+                        <li>Chocolate Ganache</li>
+                        <li>Red Velvet</li>
+                        <li>Strawberry Cream</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #8b0000;">Specialty Flavors</h3>
+                    <ul>
+                        <li>Raspberry Almond</li>
+                        <li>Rose Pistachio</li>
+                        <li>Carrot Walnut</li>
+                        <li>Lemon Lavender</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #8b0000;">Cupcakes & Mini Treats</h3>
+                    <ul>
+                        <li>Assorted Cupcakes</li>
+                        <li>Macarons</li>
+                        <li>Brownie Bites</li>
+                        <li>Mini Cheesecakes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="size-guide">
+        <div class="size-guide-section">
+            <h2 style="color: #8b0000;">Cake Size Guide</h2>
+            <p>Find the perfect size for your special occasion. All cakes are layered and generously frosted.</p>
+            <div class="size-guide-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Size</th>
+                            <th>Serves</th>
+                            <th>Starting Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>6” Round</td><td>8–10 guests</td><td>$40</td></tr>
+                        <tr><td>8” Round</td><td>12–16 guests</td><td>$55</td></tr>
+                        <tr><td>10” Round</td><td>20–25 guests</td><td>$70</td></tr>
+                        <tr><td>Two-Tier</td><td>30–40 guests</td><td>$120</td></tr>
+                        <tr><td>Three-Tier</td><td>50–65 guests</td><td>$180</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div style="text-align: center;">
+            <h2 style="color: #8b0000;">Contact Us</h2>
+            <p>Have a question or want to place an order? Reach out below:</p>
+            <form action="https://formsubmit.co/godhaaryan@gmail.com" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Crazy Delight | Crafted by Chef Ritu Godha</p>
+    </footer>
+</body>
+</html>
