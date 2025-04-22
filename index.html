@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Crazy Delights - Elegant Bakery</title>
     <style>
         body {
@@ -32,7 +34,7 @@
             align-items: center;
             position: sticky;
             top: 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             z-index: 1000;
         }
         nav ul {
@@ -52,15 +54,41 @@
             padding: 4em 2em;
         }
         .hero {
-            background: url('images/hero-bakery.jpg') center/cover no-repeat;
+            position: relative;
+            background: url('logo.jpg') center/cover no-repeat;
             height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
             text-align: center;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        .hero h2,
+        .hero p {
+            position: relative;
+            z-index: 2;
+            margin: 0 1em;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        }
+        .hero h2 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+        }
+        .hero p {
+            font-size: 1.4em;
+            max-width: 700px;
         }
         .about-chef {
             background-color: #fffdf9;
@@ -86,7 +114,8 @@
             margin-bottom: 1em;
             border: 4px solid #e0c6b2;
         }
-        .menu-section, .size-guide-section {
+        .menu-section,
+        .size-guide-section {
             max-width: 1000px;
             margin: auto;
             text-align: center;
@@ -96,18 +125,20 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2em;
         }
-        .menu-grid div, .size-guide-table table {
+        .menu-grid div,
+        .size-guide-table table {
             background: white;
             padding: 2em;
             border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
         .size-guide-table table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 2em;
         }
-        .size-guide-table th, .size-guide-table td {
+        .size-guide-table th,
+        .size-guide-table td {
             padding: 1em;
             border-bottom: 1px solid #ddd;
         }
@@ -140,12 +171,16 @@
             max-width: 600px;
             margin: auto;
         }
-        form label, form input, form textarea, form button {
+        form label,
+        form input,
+        form textarea,
+        form button {
             display: block;
             width: 100%;
             margin-bottom: 1em;
         }
-        form input, form textarea {
+        form input,
+        form textarea {
             padding: 0.75em;
             border: 1px solid #ccc;
             border-radius: 6px;
@@ -171,7 +206,26 @@
         ul {
             list-style-type: none;
         }
-
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 0.75em;
+            }
+            nav, .social-links {
+                margin: 0;
+            }
+            .social-links {
+                margin-top: 1em;
+            }
+            nav ul li {
+                margin: 0.5em 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -183,6 +237,8 @@
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#size-guide">Size Guide</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#terms">Terms</a></li>
+                <li><a href="https://www.instagram.com/rituvikas_jain/">Instagram </a></li>
             </ul>
         </nav>
     </header>
@@ -279,16 +335,29 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>6” Round</td><td>8–10 guests</td><td>$40</td></tr>
-                        <tr><td>8” Round</td><td>12–16 guests</td><td>$55</td></tr>
-                        <tr><td>10” Round</td><td>20–25 guests</td><td>$70</td></tr>
-                        <tr><td>Two-Tier</td><td>30–40 guests</td><td>$120</td></tr>
-                        <tr><td>Three-Tier</td><td>50–65 guests</td><td>$180</td></tr>
+                        <tr><td>6” Round</td><td>4-6 guests</td><td>$45</td></tr>
+                        <tr><td>7” Round</td><td>10-12 guests</td><td>$60</td></tr>
+                        <tr><td>8” Round</td><td>25-30 guests</td><td>$85</td></tr>
+                        <tr><td>10” Round</td><td>40-45 guests</td><td>$120</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </section>
+
+    <section id="terms" style="background-color: #fffaf7;">
+        <div style="max-width: 900px; margin: auto; padding: 3em 2em; background-color: #fffdf9; border-radius: 16px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); border: 1px solid #f3e2d1;">
+            <h2 style="color: #8b0000; text-align: center; margin-bottom: 1em;">Pricing & Terms of Service</h2>
+            <ul style="list-style-type: none; padding-left: 0; font-size: 1.05em; line-height: 1.8em; color: #3a2e2a;">
+                <li>✔️ We are a 100% Vegetarian Business. No eggs are used. Vegan options are available.</li>
+                <li>✔️ The entire menu is pre-order based. Not a storefront — the earliest an order would be ready is the next day.</li>
+                <li>✔️ Prices include cake, filling, icing, and decoration. Prices do <em>not</em> include toppers, ornaments, or delivery.</li>
+                <li>✔️ A 50% deposit is required to place and schedule an order. Full payment is due before pickup or delivery.</li>
+                <li>✔️ Cake stands are available for a rental fee and must be returned clean and undamaged within 3 days of the event.</li>
+            </ul>
+        </div>
+    </section>
+    
 
     <section id="contact">
         <div style="text-align: center;">
