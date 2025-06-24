@@ -68,6 +68,8 @@
             z-index: 1001;
             background: transparent;
             border: none;
+            transform: rotate(90deg); /* Rotates it from the start */
+
         }
 
 
@@ -198,8 +200,7 @@
 
         .menu-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            /* one per row */
+            grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
             gap: 2em;
         }
 
@@ -319,13 +320,11 @@
         /* --- Instagram feed --- */
         .instagram-feed {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1em;
+            grid-template-columns: repeat(4, 1fr); /* 4 per row desktop */
+            gap: 1.5em;
             padding: 2em;
             background-color: #fceeea;
             overflow-x: hidden;
-            row-gap: 1.5em;
-            /* vertical spacing */
         }
 
         .instagram-feed iframe,
@@ -334,6 +333,8 @@
             max-width: 100% !important;
             height: auto !important;
             box-sizing: border-box;
+            border: none;
+            border-radius: 12px;
         }
 
         @media (max-width: 768px) {
@@ -356,8 +357,9 @@
             .instagram-feed {
                 display: flex;
                 flex-direction: column;
+                  grid-template-columns: 1fr;
                 align-items: center;
-                padding: 0 1em;
+                padding: 1em;
             }
 
             .instagram-feed iframe,
